@@ -1,10 +1,8 @@
 # 🏃‍♀️ Trabajo N1 Obligatoio
 
-A partir de un set de datos en formato array de objetos, deberás
-crear una API rest para consultar diferente tipo de información que
-este contiene.
+A partir de un set de datos en formato array de objetos, deberás crear una API rest para consultar diferente tipo de información que este contiene.
 
-## El set de datos Trailerflix contiene información de películas y series, como ser:
+### El set de datos Trailerflix contiene información de películas y series, como ser:
 
 - codigo
 - titulo
@@ -21,9 +19,7 @@ Con toda esta información, deberás crear diferentes Endpoint que permitan cons
 - Carga en una constante llamada TRAILERFLIX el contenido del archivo JSON en formato Array de objetos (usando fileSystem API + JSON.parse para obtener y transformar los datos)
 - Crea un contenido en formato texto de bienvenida para la ruta raíz del proyecto “/”. El mensaje a mostrar puede ser texto plano, o contenido HTML. (Mejor si es este último)
 
-Con la estructura base del proyecto ya desarrollada, deberás crear los endpoints necesarios para listar el catálogo de películas y series por diferentes posibles búsquedas.
-
-Las detallamos:
+### 👩🏻‍⚕️ Con la estructura base del proyecto ya desarrollada, deberás crear los endpoints necesarios para listar el catálogo de películas y series por diferentes posibles búsquedas.
 
 - Crea un endpoint llamado /catalogo que liste todo el contenido de trailerflix JSON
 - Crea un endpoint llamado /titulo/:title que liste el catálogo de películas y/o series que se aproxime al título enviado. (la búsqueda del nombre debe ser parcial)
@@ -31,10 +27,14 @@ Las detallamos:
 - Crea un endpoint llamado /reparto/:act que liste el catálogo que incluya a la actriz o actor indicado por el nombre. (la búsqueda del nombre debe ser parcial)
 - Crea un endpoint llamado /trailer/:id que retorne la URL del trailer de la película o serie. Si ésta no posee video asociado, que retorne un mensaje en formato JSON notificando la no disponibilidad del mismo.
 
-De acuerdo a lo pedido, te compartimos recomendaciones:
+### ⚙️ Recomendaciones:
 
 1. Para el endpoint /catalogo debes retornar todo el contenido del archivo
 2. Para el endpoint /titulo/:title deberás utilizar rutas dinámicas recibiendo como parámetro el título o parte de este, aplicando la función de orden superior .filter() junto al método .includes() y el método toUpperCase() o toLowerCase() para normalizar los textos de búsqueda correspondiente
 3. Para el endpoint /categoria/:cat utiliza también .filter() y retorna todos los resultados encontrados. (Aquí son dos posibles valores solamente)
 4. Para el endpoint /reparto/:act aplica también la misma lógica utilizada en el endpoint/titulo/:title. (Como resultado, retorna solo un array con la propiedad “reparto” y la propiedad “titulo” y sus respectivos datos (no devuelvas todo el contenido) ¿recuerdas a .map()?
 5. Para el endpoint /trailer/:id debes retornar las propiedades “id”, “titulo”, “trailer”. (cuidado, porque no todas las películas/series poseen la propiedad tráiler, por lo tanto debes aplicar el operador de acceso condicional {objeto?.trailer})
+
+## 🆕 Pull Request
+
+Por favor utiliza Pull Request y ubicate en tu carpeta para realizar la subida de tu TP. Gracias!
