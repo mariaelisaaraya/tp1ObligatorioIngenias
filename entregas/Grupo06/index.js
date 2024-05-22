@@ -1,93 +1,68 @@
 const express = require("express");
+const dotenv = require("dotenv");
+const bodyParser = require("body-parser");
 const app = express();
-const fs = require("fs");
-const path = require("path");
+const { read } = require("./src/helpers/file.manager");
+const PORT = process.env.PORT || 3008;
+let trailerflix = [];
 
-require("dotenv").config(); // Cargar variables de entorno
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
+/*    MIDLEWARE     */
+dotenv.config(); // Cargar variables de entorno
+app.use(bodyParser.json());
+app.use((req, res, next) => {
+  try {
+    console.log("aqui1");
+    trailerflix = read();
+    console.log("aqui2");
+    next();
+  } catch (error) {
+    error.message = `Error al leer el archivo JSON: ${error.message}`;
+    res.status(500).send(error.message);
+  }
 });
+
+
+
+/*    WEB SERVER     */
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto http://localhost:${PORT}`);
+});
+
+
+
+/*    ENDPOINTS     */
 app.get("/", (req, res) => {
   res.set("Content-Type", "text/html");
   res.send("<html><body><h1>Bienvenid@s a HOME</h1></body></html>");
 });
 
-// ruta del archivo desde .env
-const fileJson = process.env.FILESYSTEM;
+// Endpoint GET para listar todos los contenidos
+app.get("/catalogo", (req, res) => {
+  res.status(400).send("NO IMPLEMENTADO");
+});
 
-function leerArchivo(file) {
-  const data = fs.readFileSync(file, "utf8");
-  return (jsonArray = JSON.parse(data));
-}
+// Endpoint GET para obtener un contenido por su titulo
+app.get("/titulo:title", (req, res) => {
+  res.status(400).send("NO IMPLEMENTADO");
+});
 
-try {
-  leerArchivo(fileJson);
-  console.log(jsonArray);
+// Endpoint GET para obtener un contenido por su categoria
+app.get("/categoria/:cat", (req, res) => {
+  res.status(400).send("NO IMPLEMENTADO");
+});
 
-  app.get("/stock/:stock(\\d+)", (req, res) => {
-    let stockNumber = parseInt(req.params.stock, 10);
+// Endpoint GET para obtener un contenido por los actores que participan
+app.get("/reparto/:act", (req, res) => {
+  res.status(400).send("NO IMPLEMENTADO");
+});
 
-    let totalStock = [];
-    if (stockNumber !== 0) {
-      let sumarStock = jsonArray.filter((el) => el.stock === stockNumber);
+//
+app.get("/trailer/:id", (req, res) => {
+  res.status(400).send("NO IMPLEMENTADO");
+});
 
-      totalStock = sumarStock;
-    }
 
-    totalStock.length > 0 ? res.json(totalStock) : res.json("no hay stock");
-  });
-} catch (error) {
-  console.error("Error al leer o convertir el archivo JSON:", error);
-}
-
-try {
-  leerArchivo(fileJson);
-
-  app.get("/catalogo", (req, res) => {
-    const datosSort = jsonArray.sort((a, b) => {
-      if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) {
-        return -1;
-      }
-      if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) {
-        return 1;
-      }
-      return 0;
-    });
-    res.json(datosSort);
-  });
-} catch (error) {
-  console.error("Error al leer o convertir el archivo JSON:", error);
-}
-
-try {
-  leerArchivo(fileJson);
-  console.log(jsonArray);
-
-  app.get("/nombre/:nombre", (req, res) => {
-    let parametro = req.params.nombre.trim().toLowerCase();
-    console.log("soy parametro", parametro);
-
-    if (parametro !== "") {
-      let resultado = [];
-
-      for (let producto of jsonArray) {
-        if (producto.nombre.toLowerCase().includes(parametro.toLowerCase())) {
-          resultado.push(producto);
-        }
-      }
-      if (resultado.length > 0) {
-        res.json(resultado);
-      } else {
-        res.json("no hay coincidencia");
-      }
-    }
-  });
-} catch (error) {
-  console.error("Error al leer o convertir el archivo JSON:", error);
-}
-
+//Endpoint NOT FOUND
 app.get("*", (req, res) => {
   res.status(404).send("Lo siento, la página que buscas no existe.");
 });

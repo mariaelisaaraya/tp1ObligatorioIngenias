@@ -1,4 +1,6 @@
-Por favor escribir en este espacio el readme
+Rama de desarrollo dev
+Rama de entrega final master
+
 
 Grupo:
 
