@@ -38,3 +38,9 @@ Con toda esta información, deberás crear diferentes Endpoint que permitan cons
 ## 🆕 Pull Request
 
 Por favor utiliza Pull Request y ubicate en tu carpeta para realizar la subida de tu TP. Gracias!
+
+## 🆕 Fecha y Horario de Entrega
+
+Lunes 27/05 a las 18hs
+
+
