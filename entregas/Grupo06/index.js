@@ -38,7 +38,17 @@ app.get("/", (req, res) => {
 
 // Endpoint GET para listar todos los contenidos
 app.get("/catalogo", (req, res) => {
-  res.status(400).send("NO IMPLEMENTADO");
+  const sortedByName = trailerflix.sort((a, b) => {
+    if (a.titulo.toLowerCase() < b.titulo.toLowerCase()) {
+      return -1;
+    }
+    if (a.titulo.toLowerCase() > b.titulo.toLowerCase()) {
+      return 1;
+    }
+    return 0;
+  });
+
+  res.status(200).json(sortedByName);
 });
 
 // Endpoint GET para obtener un contenido por su titulo
