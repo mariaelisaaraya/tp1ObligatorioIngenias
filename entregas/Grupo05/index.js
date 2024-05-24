@@ -22,5 +22,13 @@ const server = http.createServer((request, response) =>{
             respuesta = "No se encontro la ruta, vuelve a intentarlo.";
 
           }
-    
+    response.statusCode(statusCode);
+    response.setHeader('charset', 'utf-8');
+    response.setHeader('Content-Type', 'text/plain');
+    response.end(respuesta);
+
+});
+
+server.listen(PORT, () =>{
+    console.log( `Servidor ejecutandose en el puerto: ${PORT}`);
 })
