@@ -1,4 +1,4 @@
-const express = requiere('express');
+const express = require('express');
 const app = express();
 const PORT = 3008;
 
@@ -30,6 +30,11 @@ app.get('/reparto/:act',(request, response)=>{
 app.get('/trailer/:id',(request, response)=>{
 
     response.send("");
+});
+
+app.use((request, response)=>{
+    response.status(404).send('Lo siento, la página que buscas no existe.');
+
 });
 
 app.listen(PORT, ()=>{
