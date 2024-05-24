@@ -42,4 +42,13 @@ function obtenerTrailerPorId(id, DB) {
     }
 }
 
-module.exports = { leerTrailerflix, obtenerTrailerPorId };
+const obtenerTitulo = (title, DB) => {
+    const titleEncontrado = DB.filter(n => n.titulo.toLowerCase().includes(title));
+    if (titleEncontrado.length > 0) {
+        return titleEncontrado;
+    } else {
+        return { mensaje: `No se encontraron resultados.` };
+    }
+}
+
+module.exports = { leerTrailerflix, obtenerTrailerPorId, obtenerTitulo };
