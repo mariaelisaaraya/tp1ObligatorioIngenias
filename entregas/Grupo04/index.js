@@ -34,9 +34,27 @@ app.get('/api/categoria/:cat', (req, res) => {
     res.send("Hola")
 })
 
+// Esta ruta recibe el nombre de un actor o actriz y devuelve las películas en las que ha participado. junto con el reparto de cada película.
 app.get('/api/reparto/:act', (req, res) => {
-    res.send("Hola")
-})
+    let param = req.params['act'].trim().toLowerCase();
+    console.log(param)
+    if (param !== ""){
+        let result = [];
+        DB.forEach( item => {
+            item.reparto.map(reparto => {
+            if(reparto.toLowerCase().includes(param)){
+                result.push({
+                    titulo: item.titulo,
+                    reparto: item.reparto
+                });
+                }
+            });
+        });
+
+        result.length > 0 ? res.json(result) :
+        res.status(404).json({ id: 'Error', descripcion: 'Ups!!! No hay coincidencias encontradas :(' })
+    }
+});
 
 app.get('/api/trailer/:id', (req, res) => {
     res.send("Hola")
