@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
-const PORT = 3008;
+const patj = require('path');
+const PORT = process.env.PORT || 3008;
 
+//Ruta raiz
 app.get('/',(request, response)=>{
 
     response.send("Bienvenid@s a nuestro primer trabajo practico.");
@@ -33,7 +35,7 @@ app.get('/trailer/:id',(request, response)=>{
 });
 
 app.use((request, response)=>{
-    response.status(404).send('Lo siento, la página que buscas no existe.');
+    response.status(404).send('Lo siento, la página que busca no existe.');
 
 });
 

@@ -4,15 +4,17 @@
   "description": "Por favor escribir en este espacio el readme",
   "main": "index.js",
   "scripts": {
-    "start": "node --watch index.js",
-    "dev": "nodemon index.js",
+    "start": "node index.js" ,
+    "dev": "node --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7"
   }
 }
