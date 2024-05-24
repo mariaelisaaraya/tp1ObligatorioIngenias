@@ -1,34 +1,38 @@
-const http = require('http');
+const express = requiere('express');
+const app = express();
 const PORT = 3008;
 
+app.get('/',(request, response)=>{
 
-const server = http.createServer((request, response) =>{
-    let respuesta = "";
-    let statusCode = 200;
-    if(request.url ==='/'){
-        respuesta = "Bienvenid@s a nuestro primer trabajo practico."
-    }else if(request.url ==='/catalogo'){
-
-        }else if(request.url ==='/titulo/:title'){
-
-          }else if(request.url ==='/categoria/:cat'){
-
-          }else if(request.url ==='/reparto/:act'){
-
-          }else if(request.url ==='/trailer/:id'){
-
-          }else {
-            statusCode = 404;
-            respuesta = "No se encontro la ruta, vuelve a intentarlo.";
-
-          }
-    response.statusCode = statusCode;
-    response.setHeader('charset', 'utf-8');
-    response.setHeader('Content-Type', 'text/plain');
-    response.end(respuesta);
-
+    response.send("Bienvenid@s a nuestro primer trabajo practico.");
 });
 
-server.listen(PORT, () =>{
-    console.log( `Servidor ejecutandose en el puerto: http://localhost:${PORT}`);
+app.get('/catalogo',(request, response)=>{
+
+    response.send("");
 });
+
+app.get('/titulo/:title',(request, response)=>{
+
+    response.send("");
+});
+
+app.get('/categoria/:cat',(request, response)=>{
+
+    response.send("");
+});
+
+app.get('/reparto/:act',(request, response)=>{
+
+    response.send("");
+});
+
+app.get('/trailer/:id',(request, response)=>{
+
+    response.send("");
+});
+
+app.listen(PORT, ()=>{
+    console.log( "Servidor ejecutandose en el puerto: http://localhost:"+PORT);
+});
+
