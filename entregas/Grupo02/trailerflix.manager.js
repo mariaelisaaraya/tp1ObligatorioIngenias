@@ -10,10 +10,10 @@ function filtrarElementosPorNombre (nombre){
     DB = leerElementos()
     let nom = nombre.trim().toLowerCase() //Usamos los métodos trim() para eliminar posibles espacios y toLowerCase() para convertir todo a minúsculas y evitar errores posteriores.
     const resultado = DB.filter((elemento) => elemento.titulo.trim().toLowerCase().includes(nom));
-    if (resultado) { 
+    if (resultado.length > 0) { 
         return resultado
           } else {
-                console.error("No se encontraron coincidencias.");
+            return [{error: `Error en el título`, descripcion: `No se pudo encontrar un resultado con el título: ${nom}`}]
           }
 }
 
@@ -24,8 +24,7 @@ function filtrarElementosPorCategoria(categoria) {
     if (resultado.length > 0) { 
         return resultado;
     } else {
-        console.error("No se encontraron coincidencias.");
-        return []; // Retorna un array vacío si no hay coincidencias
+        return [{error: `Error en la categoría`, descripcion: `No se pudo encontrar un resultado con la categoría: ${cat}`}]
     }
 }
 
@@ -42,8 +41,7 @@ function filtrarElementosPorReparto(reparto) {
         })
         return resultadoReducido;
     } else {
-        console.error("No se encontraron coincidencias.");
-        return []; // Retorna un array vacío si no hay coincidencias
+        return [{error: `Error`, descripcion: `No se pudo encontrar un resultado que incluya a: ${act}`}]
     }
 }
 
@@ -61,8 +59,7 @@ function filtrarElementosPorId(id) {
         })
         return resultadoReducido;
     } else {
-        console.error("No se encontraron coincidencias.");
-        return []; // Retorna un array vacío si no hay coincidencias
+        return [{error: `Error`, descripcion: `No se pudo encontrar un resultado con el id: ${codigo}`}]
     }
 }
 module.exports = {leerElementos, filtrarElementosPorNombre, filtrarElementosPorCategoria, filtrarElementosPorReparto, filtrarElementosPorId}

@@ -6,8 +6,7 @@ const app = express();
 
 app.use(express.json());
 
-// const bodyParser = require('body-parser');
-// app.use(bodyParser.json());
+
 const { leerElementos, filtrarElementosPorNombre, filtrarElementosPorCategoria, filtrarElementosPorReparto, filtrarElementosPorId } = require('./trailerflix.manager');
 
 const PORT = process.env.PORT || 3008;
@@ -18,8 +17,7 @@ app.use((req,res,next)=>{
     next();
 })
 
-// SERVIDOR WEB
-// metodo get generico
+// endpoint raiz
 app.get('/', (req,res)=>{
     res.send('<html><body><h1>BIENVENIDAS A TRAILERFLIX</h1></body></html>')
 })
@@ -58,7 +56,7 @@ app.get('/trailer/:id', (req,res)=>{
 })
 
 
-
+//Manejo de rutas inexistentes
 app.get('*', (req, res) => {
     res.status(404).send('Lo siento, la página que buscas no existe.'); 
 });
