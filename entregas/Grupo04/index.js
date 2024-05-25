@@ -39,17 +39,13 @@ app.get('/api/reparto/:act', (req, res) => {
     let param = req.params['act'].trim().toLowerCase();
     console.log(param)
     if (param !== ""){
-        let result = [];
-        DB.forEach( item => {
-            item.reparto.map(reparto => {
-            if(reparto.toLowerCase().includes(param)){
-                result.push({
-                    titulo: item.titulo,
-                    reparto: item.reparto
-                });
-                }
-            });
-        });
+        let result = DB.filter( item => 
+            item.reparto.some(reparto => 
+            reparto.toLowerCase().includes(param))).map(item => 
+            ({
+            titulo: item.titulo,
+            reparto: item.reparto
+        }));
 
         result.length > 0 ? res.json(result) :
         res.status(404).json({ id: 'Error', descripcion: 'Ups!!! No hay coincidencias encontradas :(' })
