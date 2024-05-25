@@ -51,4 +51,16 @@ const obtenerTitulo = (title, DB) => {
     }
 }
 
-module.exports = { leerTrailerflix, obtenerTrailerPorId, obtenerTitulo };
+const obtenerReparto = (param, DB) => {
+    let result = DB.filter( item => 
+        item.reparto.some(reparto => 
+        reparto.toLowerCase().includes(param))).map(item => 
+        ({
+        titulo: item.titulo,
+        reparto: item.reparto
+    }));
+
+    return result;
+}
+
+module.exports = { leerTrailerflix, obtenerTrailerPorId, obtenerTitulo, obtenerReparto };
