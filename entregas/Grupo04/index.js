@@ -7,7 +7,7 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const { leerTrailerflix } = require('./src/trailerflix.controller');
+const { leerTrailerflix, obtenerTrailerPorId, obtenerTitulo } = require('./src/trailerflix.controller');
 
 const PORT = process.env.PORT || 3000;
 
@@ -17,17 +17,18 @@ app.use((req, res, next) => {
     next();
 })
 
-
-app.get('/api', (req, res) => {
-    res.send("TrailerFlix")
-})
+app.get('/', (req, res) => {
+    res.send("<h1>Bienvenido a TrailerFlix</h1><p>¡Disfruta explorando nuestro catálogo de películas y series!</p>");
+});
 
 app.get('/api/catalogo', (req, res) => {
     res.send(DB)
 })
 
 app.get('/api/titulo/:title', (req, res) => {
-    res.send("Hola")
+    const title = req.params.title.toLowerCase();
+    const data = obtenerTitulo(title, DB);
+    res.send(data)
 })
 
 app.get('/api/categoria/:cat', (req, res) => {
@@ -52,8 +53,12 @@ app.get('/api/reparto/:act', (req, res) => {
     }
 });
 
+// Ruta para obtener el trailer de una película o serie por su id
 app.get('/api/trailer/:id', (req, res) => {
-    res.send("Hola")
+    const id = parseInt(req.params.id);
+    const trailer = obtenerTrailerPorId(id, DB);
+
+    res.send(trailer);
 })
 
 app.get('*', (req, res) => {
