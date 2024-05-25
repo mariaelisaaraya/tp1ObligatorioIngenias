@@ -1,0 +1,11 @@
+{
+  "name": "tp1obligatorioingenias",
+  "version": "1.0.0",
+  "description": "Lunes 27/05 a las 18hs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

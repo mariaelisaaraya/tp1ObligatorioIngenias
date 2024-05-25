@@ -21,14 +21,10 @@ app.use((req, res, next) => {
   }
 });
 
-
-
 /*    WEB SERVER     */
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto http://localhost:${PORT}`);
 });
-
-
 
 /*    ENDPOINTS     */
 app.get("/", (req, res) => {
@@ -51,14 +47,34 @@ app.get("/catalogo", (req, res) => {
   res.status(200).json(sortedByName);
 });
 
-// Endpoint GET para obtener un contenido por su titulo
-app.get("/titulo:title", (req, res) => {
-  res.status(400).send("NO IMPLEMENTADO");
+app.get("/titulo/:titulo", (req, res) => {
+  let parametro = req.params.titulo.trim().toLowerCase();
+  console.log(parametro);
+
+  let totalTitles = [];
+  if (parametro !== "") {
+    let total = trailerflix.filter((el) =>
+      el.titulo.trim().toLowerCase().includes(parametro)
+    );
+
+    totalTitles = total;
+  }
+
+  totalTitles.length > 0 ? res.json(totalTitles) : res.json("no existe movie");
 });
+
 
 // Endpoint GET para obtener un contenido por su categoria
 app.get("/categoria/:cat", (req, res) => {
-  res.status(400).send("NO IMPLEMENTADO");
+  const { cat } = req.params;
+  const validCategories = ["serie", "pelicula"];
+
+  if (!validCategories.includes(cat.toLowerCase())) {
+    return res.status(400).send("Categoría no válida. Debe ser 'serie' o 'pelicula'.");
+  }
+
+  const filteredContent = trailerflix.filter(item => item.categoria.toLowerCase() === cat.toLowerCase());
+  res.status(200).json(filteredContent);
 });
 
 // Endpoint GET para obtener un contenido por los actores que participan
@@ -70,7 +86,6 @@ app.get("/reparto/:act", (req, res) => {
 app.get("/trailer/:id", (req, res) => {
   res.status(400).send("NO IMPLEMENTADO");
 });
-
 
 //Endpoint NOT FOUND
 app.get("*", (req, res) => {
