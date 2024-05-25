@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "tp1obligatorioingenias",
   "version": "1.0.0",
   "description": "Lunes 27/05 a las 18hs",
@@ -8,4 +9,22 @@
   },
   "author": "",
   "license": "ISC"
+=======
+  "name": "preentrega1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+>>>>>>> 1a88476a99d9591ec1fb0093133bcca3b4101d1e
 }
