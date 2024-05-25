@@ -1,2 +1,2 @@
-node_module
-*-lock.json
+node_modules
+*_lock.json
