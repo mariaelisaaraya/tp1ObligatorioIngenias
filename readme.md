@@ -1,3 +1,8 @@
+
+## 🆕 Fecha y Horario de Entrega
+
+Lunes 27/05 a las 18hs
+
 # 🏃‍♀️ Trabajo N1 Obligatoio
 
 A partir de un set de datos en formato array de objetos, deberás crear una API rest para consultar diferente tipo de información que este contiene.
@@ -37,4 +42,7 @@ Con toda esta información, deberás crear diferentes Endpoint que permitan cons
 
 ## 🆕 Pull Request
 
-Por favor utiliza Pull Request y ubicate en tu carpeta para realizar la subida de tu TP. Gracias!
+Por favor utiliza Pull Request y ubicate en tu carpeta para realizar la subida de tu TP. Gracias! Si no pudiste realizar Tu PR deja tu proyecto copiado en el campus especificando rama que hay que leer, nombre del grupo. personas del grupo.
+
+
+
