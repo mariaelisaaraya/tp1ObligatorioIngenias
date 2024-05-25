@@ -8,7 +8,7 @@ app.use(express.json());
 
 // const bodyParser = require('body-parser');
 // app.use(bodyParser.json());
-const { leerElementos, filtrarElementosPorNombre, filtrarElementosPorCategoria, filtrarElementosPorReparto } = require('./trailerflix.manager');
+const { leerElementos, filtrarElementosPorNombre, filtrarElementosPorCategoria, filtrarElementosPorReparto, filtrarElementosPorId } = require('./trailerflix.manager');
 
 const PORT = process.env.PORT || 3008;
 
@@ -51,6 +51,11 @@ app.get('/reparto/:act', (req,res)=>{
 })
 
 // - Crea un endpoint llamado /trailer/:id que retorne la URL del trailer de la película o serie. Si ésta no posee video asociado, que retorne un mensaje en formato JSON notificando la no disponibilidad del mismo.
+app.get('/trailer/:id', (req,res)=>{
+    const id = parseInt(req.params.id)
+    const result = filtrarElementosPorId(id)
+    res.send(result)
+})
 
 
 

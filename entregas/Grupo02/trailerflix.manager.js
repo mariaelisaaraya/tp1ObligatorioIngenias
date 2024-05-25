@@ -8,9 +8,8 @@ function leerElementos(){
 
 function filtrarElementosPorNombre (nombre){
     DB = leerElementos()
-    let nom = nombre.trim().toLowerCase()
+    let nom = nombre.trim().toLowerCase() //Usamos los métodos trim() para eliminar posibles espacios y toLowerCase() para convertir todo a minúsculas y evitar errores posteriores.
     const resultado = DB.filter((elemento) => elemento.titulo.trim().toLowerCase().includes(nom));
-    // el tener el resultado solo o tener resultado !== [] es lo mismo porque preguntamos lo mismo indirectamente
     if (resultado) { 
         return resultado
           } else {
@@ -18,20 +17,8 @@ function filtrarElementosPorNombre (nombre){
           }
 }
 
-// function filtrarElementosPorCategoria (categoria){
-//     DB = leerElementos()
-//     let cat = categoria.trim().toLowerCase()
-//     const resultado = DB.filter((elemento) => elemento.categoria.trim().toLowerCase().includes(cat));
-//     // el tener el resultado solo o tener resultado !== [] es lo mismo porque preguntamos lo mismo indirectamente
-//     if (resultado) { 
-//         return resultado
-//           } else {
-//                 console.error("No se encontraron coincidencias.");
-//           }
-// }
-
 function filtrarElementosPorCategoria(categoria) {
-    let DB = leerElementos(); // Asegúrate de usar 'let', 'const' o 'var' para declarar la variable
+    let DB = leerElementos(); 
     let cat = categoria.trim().toLowerCase();
     const resultado = DB.filter((elemento) => elemento.categoria.trim().toLowerCase().includes(cat));
     if (resultado.length > 0) { 
@@ -59,4 +46,23 @@ function filtrarElementosPorReparto(reparto) {
         return []; // Retorna un array vacío si no hay coincidencias
     }
 }
-module.exports = {leerElementos, filtrarElementosPorNombre, filtrarElementosPorCategoria, filtrarElementosPorReparto}
+
+function filtrarElementosPorId(id) {
+    let DB = leerElementos();
+    let codigo = id
+    const resultado = DB.filter((elemento) => elemento.id === codigo);
+    if (resultado.length > 0) { 
+        const resultadoReducido = resultado.map((elemento) => {
+            return {
+                id: elemento.id,
+                titulo: elemento.titulo,
+                trailer: elemento.trailer? elemento.trailer : {error: 'Error en el trailer', descripcion: "El elemento no posee trailer"}
+            }
+        })
+        return resultadoReducido;
+    } else {
+        console.error("No se encontraron coincidencias.");
+        return []; // Retorna un array vacío si no hay coincidencias
+    }
+}
+module.exports = {leerElementos, filtrarElementosPorNombre, filtrarElementosPorCategoria, filtrarElementosPorReparto, filtrarElementosPorId}
