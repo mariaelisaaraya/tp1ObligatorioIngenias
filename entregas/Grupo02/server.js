@@ -8,7 +8,7 @@ app.use(express.json());
 
 // const bodyParser = require('body-parser');
 // app.use(bodyParser.json());
-const { leerElementos, filtrarElementosPorNombre, filtrarElementosPorCategoria } = require('./trailerflix.manager');
+const { leerElementos, filtrarElementosPorNombre, filtrarElementosPorCategoria, filtrarElementosPorReparto } = require('./trailerflix.manager');
 
 const PORT = process.env.PORT || 3008;
 
@@ -44,6 +44,12 @@ app.get('/categoria/:cat', (req,res)=>{
 })
 
 // - Crea un endpoint llamado /reparto/:act que liste el catálogo que incluya a la actriz o actor indicado por el nombre. (la búsqueda del nombre debe ser parcial)
+app.get('/reparto/:act', (req,res)=>{
+    const act = req.params.act
+    const result = filtrarElementosPorReparto(act)
+    res.send(result)
+})
+
 // - Crea un endpoint llamado /trailer/:id que retorne la URL del trailer de la película o serie. Si ésta no posee video asociado, que retorne un mensaje en formato JSON notificando la no disponibilidad del mismo.
 
 

@@ -41,4 +41,22 @@ function filtrarElementosPorCategoria(categoria) {
         return []; // Retorna un array vacío si no hay coincidencias
     }
 }
-module.exports = {leerElementos, filtrarElementosPorNombre, filtrarElementosPorCategoria}
+
+function filtrarElementosPorReparto(reparto) {
+    let DB = leerElementos();
+    let act = reparto.trim().toLowerCase();
+    const resultado = DB.filter((elemento) => elemento.reparto.trim().toLowerCase().includes(act));
+    if (resultado.length > 0) { 
+        const resultadoReducido = resultado.map((elemento) => {
+            return {
+                titulo: elemento.titulo,
+                reparto: elemento.reparto,
+            }
+        })
+        return resultadoReducido;
+    } else {
+        console.error("No se encontraron coincidencias.");
+        return []; // Retorna un array vacío si no hay coincidencias
+    }
+}
+module.exports = {leerElementos, filtrarElementosPorNombre, filtrarElementosPorCategoria, filtrarElementosPorReparto}
