@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-Rama de desarrollo dev
-
-Rama de entrega final master
-
-
-Grupo:
-
-- Andrea Ayelén Diaz
-- Daniela Soto
-- Ana Santos
-- Magalí Giles
-=======
 
 ## 🆕 Fecha y Horario de Entrega
 
@@ -59,4 +46,3 @@ Por favor utiliza Pull Request y ubicate en tu carpeta para realizar la subida d
 
 
 
->>>>>>> cbf4daff7b54f9c941157200bf2496374f8d8db2
