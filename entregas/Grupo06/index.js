@@ -98,10 +98,21 @@ app.get("/reparto/:act", (req, res) => {
   }
 });
 
-//
-app.get("/trailer/:id", (req, res) => {
+
+//Endpoint GET para obtener un contenido por el trailer
+app.get("/titulo:title", (req, res) =>{
+  const id = parseInt(req.params.id);
+  const trailerId = trailerflix.filter(catalogo => catalogo.trailer(req.params.trailer))
+  .maps(catalogo => ({
+    id : catalogo.id,
+    titulo : catalogo.titulo,
+    trailer : catalogo.trailer 
+  }));
+   
+  trailerId.lenght>0?res.status(200).json(trailerId):
+  res.status(404).json({error:'Error 404', descrpcion:`No se encontraron resultados para ${ parámetro } `})
   res.status(400).send("NO IMPLEMENTADO");
-});
+  });
 
 //Endpoint NOT FOUND
 app.get("*", (req, res) => {
