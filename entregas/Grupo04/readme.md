@@ -1,60 +1,134 @@
-# Trabajo N° 1 Obligatorio: TrailerFlix
-## Grupo 4:
+<h1 align="center">🗿 Proyecto: TrailerFlix</h1>
 
-* Silvina Figueroa
-* Daniela Ramírez
-* Rocio Ibañez
-* Amaranta Villegas
+&nbsp;
 
-## Instrucciones para Ejecutar el Código
+<h3 align="center"> 💻 Éste es nuestro 1er proyecto: TrailerFlix</h3>
 
-1. Clonar el repositorio
+&nbsp;
 
-2. Instalar dependencias:
-    ```npm install```
-3. Ejecutar la aplicación:
-    ```npm start```
+<p>👩‍💻 Hecho en grupo, por las alumnas:</p>
 
-## Descripción de Endpoints
+`GitHub profiles ↓`
 
-### Endpoint `/catalogo`
+<ul>
+        <li><a href="https://github.com/amarantaVC" target="_blank">Amaranta Villegas</a></li>
+        <li><a href="https://github.com/dxniela" target="_blank">Daniela Ramírez</a></li>
+        <li><a href="https://github.com/Roci16" target="_blank">Rocio Ibañez</a></li>
+        <li><a href="https://github.com/silfigue" target="_blank">Silvina Figueroa</a></li>
+</ul>
 
-Este endpoint devuelve una lista de todo el contenido disponible en el catálogo.
+<p>💜 Lo hicimos en conjunto, sumando todos nuestros conocimientos aprendidos. Cada compañera trabajando en una o varias branches. Incluyendo llamadas grupales, para corregir y trabajar en conjunto, solucionando problemas, compartiendo otras maneras de hacer el código. Y finalmente, sumar todas las ramas y formar el proyecto finalizado!</p>
 
-P.S: Para probar este endpoint en el navegador usa la siguiente ruta:
+&nbsp;
 
-```http://localhost:3008/api/catalogo```
+---
 
-### Endpoint `/titulo/:title`
+&nbsp;
 
-Este endpoint devuelve una lista de películas y/o series que se aproximan al título enviado como parámetro. Realiza una búsqueda parcial, lo que significa que encuentra coincidencias incluso si solo se proporciona parte del título.
+ <h3 align="center"> 📝 Contenidos </h3>
 
-P.S: Para probar este endpoint en el navegador usa la siguiente ruta, reemplazando ```:titulo``` por el titulo que desea buscar:
+- [x] Debe respetar la estructura básica de un servidor web utilizando Express JS
+- [x] Debe incluir el archivo .ENV
+- [x] Debe incluir contenido en formato texto de bienvenida para la ruta raíz del proyecto
 
-```http://localhost:3008/api/titulo/:titulo```
+&nbsp;
 
+🎛 Endpoints:
 
-### Endpoint `/categoria/:cat`
+- [x] /catalogo
+- [x] /titulo/:title
+- [x] /categoria/:cat
+- [x] /reparto/:act
+- [x] /trailer/:id
 
-Este endpoint devuelve todo el contenido del catálogo que corresponde a la categoría enviada como parámetro. Las categorías pueden ser "serie" o "película".
+&nbsp;
 
-P.S: Para probar este endpoint en el navegador usa la siguiente ruta, reemplazando ```:cat``` por la seria o película que desea busca.
+<h2 align="center">📝 Descripción de Endpoints</h2>
 
-```http://localhost:3008/api/categoria/:cat```
+<h3>Endpoint <code>/api/catalogo</code></h3>
 
-### Endpoint `/reparto/:act`
+<p>Este endpoint devuelve una lista de todo el contenido disponible en el catálogo.</p>
 
-Este endpoint devuelve una lista del catálogo que incluye al actor o actriz indicado por el nombre enviado como parámetro. Realiza una búsqueda parcial del nombre, lo que significa que encuentra coincidencias incluso si solo se proporciona parte del nombre del actor o actriz.
+<p>Para probar este endpoint en el navegador, usa la siguiente ruta:</p>
 
-P.S: Para probar este endpoint en el navegador usa la siguiente ruta, reemplazando ```:act``` por el actor o actriz que desea buscar.
+<pre><code>http://localhost:3008/api/catalogo</code></pre>
 
-```http://localhost:3008/api/reparto/:act```
+<h3>Endpoint <code>/api/titulo/:title</code></h3>
 
-### Endpoint `/trailer/:id`
+<p>Este endpoint devuelve una lista de películas y/o series que se aproximan al título enviado como parámetro. Realiza una búsqueda parcial, lo que significa que encuentra coincidencias incluso si solo se proporciona parte del título.</p>
 
-Este endpoint devuelve la URL del tráiler de la película o serie correspondiente al ID proporcionado como parámetro. Si la película o serie no tiene un video asociado, devuelve un mensaje notificando la no disponibilidad del mismo.
+<p>Para probar este endpoint en el navegador, usa la siguiente ruta, reemplazando <code>:title</code> por el título que deseas buscar:</p>
 
-P.S: Para probar este endpoint en el navegador usa la siguiente ruta, reemplazando ```:id``` por el id que desea buscar.
+<pre><code>http://localhost:3008/api/titulo/:title</code></pre>
 
-```http://localhost:3008/api/trailer/:act```
+<h3>Endpoint <code>/api/categoria/:cat</code></h3>
 
+<p>Este endpoint devuelve todo el contenido del catálogo que corresponde a la categoría enviada como parámetro. Las categorías pueden ser "serie" o "película".</p>
+
+<p>Para probar este endpoint en el navegador, usa la siguiente ruta, reemplazando <code>:cat</code> por "serie" o "pelicula":</p>
+
+<pre><code>http://localhost:3008/api/categoria/:cat</code></pre>
+
+<h3>Endpoint <code>/api/reparto/:act</code></h3>
+
+<p>Este endpoint devuelve una lista del catálogo que incluye al actor o actriz indicado por el nombre enviado como parámetro. Realiza una búsqueda parcial del nombre, lo que significa que encuentra coincidencias incluso si solo se proporciona parte del nombre del actor o actriz.</p>
+
+<p>Para probar este endpoint en el navegador, usa la siguiente ruta, reemplazando <code>:act</code> por el nombre del actor o actriz que deseas buscar:</p>
+
+<pre><code>http://localhost:3008/api/reparto/:act</code></pre>
+
+<h3>Endpoint <code>/api/trailer/:id</code></h3>
+
+<p>Este endpoint devuelve la URL del tráiler de la película o serie correspondiente al ID proporcionado como parámetro. Si la película o serie no tiene un video asociado, devuelve un mensaje notificando la no disponibilidad del mismo.</p>
+
+<p>Para probar este endpoint en el navegador, usa la siguiente ruta, reemplazando <code>:id</code> por el ID que deseas buscar:</p>
+
+<pre><code>http://localhost:3008/api/trailer/:id</code></pre>
+
+&nbsp;
+
+ <h2>📄 Instrucciones para Ejecutar el Código</h2>
+
+<ol>
+    <li>Clonar el repositorio</li>
+    <li>Instalar dependencias:
+        <pre><code>npm install</code></pre>
+    </li>
+    <li>Ejecutar la aplicación:
+        <pre><code>npm start</code></pre>
+    </li>
+</ol>
+
+&nbsp;
+
+---
+
+<h3 align="center">Tecnologías utilizadas:</h3>
+
+&nbsp;
+
+<p align="center"> 
+  <a href="https://nodejs.org/" target="_blank" style="margin: 0 10px;"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="100" height="100"/> 
+  </a>
+  <a href="https://expressjs.com/" target="_blank" style="margin: 0 10px;"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="100" height="100"/> 
+  </a>
+  <a href="https://git-scm.com/" target="_blank" style="margin: 0 10px;"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original-wordmark.svg" alt="git" width="100" height="100"/> 
+  </a> 
+</p>
+
+&nbsp;
+
+<h4 align="center">Herramientas utilizadas:</h4>
+
+<p align="center"> 
+  <a href="https://code.visualstudio.com/" target="_blank" style="margin: 0 10px;"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original-wordmark.svg" alt="vscode" width="100" height="100"/> 
+  </a>
+  <a href="https://trello.com/" target="_blank" style="margin: 0 10px;"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/trello/trello-plain-wordmark.svg" alt="trello" width="100" height="100"/> 
+  </a>
+</p>
+&nbsp;
