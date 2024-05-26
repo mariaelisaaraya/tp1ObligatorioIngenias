@@ -11,9 +11,7 @@ dotenv.config(); // Cargar variables de entorno
 app.use(bodyParser.json());
 app.use((req, res, next) => {
   try {
-    console.log("aqui1");
     trailerflix = read();
-    console.log("aqui2");
     next();
   } catch (error) {
     error.message = `Error al leer el archivo JSON: ${error.message}`;
@@ -44,23 +42,28 @@ app.get("/catalogo", (req, res) => {
     return 0;
   });
 
+  if (sortedByName.length === 0) {
+    res.status(404).json({ error: "Error 404", description: "No hay contenido disponible" });
+  }
+
   res.status(200).json(sortedByName);
+  
 });
 
 app.get("/titulo/:titulo", (req, res) => {
   let parametro = req.params.titulo.trim().toLowerCase();
-  console.log(parametro);
 
   let totalTitles = [];
   if (parametro !== "") {
-    let total = trailerflix.filter((el) =>
-      el.titulo.trim().toLowerCase().includes(parametro)
-    );
+    const total = trailerflix.filter(catalogo =>
+      catalogo.titulo.trim().toLowerCase()
+        .includes(parametro.trim().toLowerCase()));
 
     totalTitles = total;
   }
 
-  totalTitles.length > 0 ? res.json(totalTitles) : res.json("no existe movie");
+  totalTitles.length > 0 ? res.status(200).json(totalTitles) : 
+    res.status(404).json({error: 'Error 404', description:`No se encontraron resultados para ${parametro}`});
 });
 
 
@@ -79,7 +82,20 @@ app.get("/categoria/:cat", (req, res) => {
 
 // Endpoint GET para obtener un contenido por los actores que participan
 app.get("/reparto/:act", (req, res) => {
-  res.status(400).send("NO IMPLEMENTADO");
+  const repartoByAct = trailerflix.filter(catalogo =>
+    catalogo.reparto.trim().toLowerCase()
+      .includes(req.params.act.trim().toLowerCase()))
+      .map(catalogo =>({
+        id: catalogo.id,
+        titulo: catalogo.titulo,
+        reparto: catalogo.reparto
+      }));
+  
+  if (repartoByAct.length > 0) {
+    res.status(200).json(repartoByAct)
+  } else {
+    res.status(404).json({error: 'Error 404', description: `No se encontraron resultados para ${req.params.act}`});
+  }
 });
 
 //
