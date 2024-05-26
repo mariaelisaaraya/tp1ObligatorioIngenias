@@ -7,7 +7,7 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const { leerTrailerflix, obtenerTrailerPorId, obtenerTitulo, obtenerReparto } = require('./src/trailerflix.controller');
+const { leerTrailerflix, obtenerTrailerPorId, obtenerTitulo, obtenerCategorias, obtenerReparto } = require('./src/trailerflix.controller');
 
 const PORT = process.env.PORT || 3000;
 
@@ -26,24 +26,28 @@ app.get('/api/catalogo', (req, res) => {
 })
 
 app.get('/api/titulo/:title', (req, res) => {
-    const title = req.params.title.toLowerCase();
+    const title = req.params.title.trim().toLowerCase();
     const data = obtenerTitulo(title, DB);
     res.send(data)
 })
 
+// Esta ruta recibe el nombre de una categoria (serie o pelicula) y devuelve un listado correspondiente a esa categoria
 app.get('/api/categoria/:cat', (req, res) => {
-    res.send("Hola")
+    const cat = req.params.cat.trim().toLowerCase()
+    const data = obtenerCategorias(cat, DB)
+    res.send(data)
+
 })
 
 // Esta ruta recibe el nombre de un actor o actriz y devuelve las películas en las que ha participado. junto con el reparto de cada película.
 app.get('/api/reparto/:act', (req, res) => {
     let param = req.params['act'].trim().toLowerCase();
     console.log(param)
-    if (param !== ""){
+    if (param !== "") {
         let result = obtenerReparto(param, DB);
 
         result.length > 0 ? res.json(result) :
-        res.status(404).json({ id: 'Error', descripcion: 'Ups!!! No hay coincidencias encontradas :(' })
+            res.status(404).json({ id: 'Error', descripcion: 'Ups!!! No hay coincidencias encontradas :(' })
     }
 });
 
