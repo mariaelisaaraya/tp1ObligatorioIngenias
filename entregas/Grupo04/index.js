@@ -7,7 +7,7 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const { leerTrailerflix, obtenerTrailerPorId, obtenerTitulo, obtenerReparto } = require('./src/trailerflix.controller');
+const { leerTrailerflix, obtenerTrailerPorId, obtenerTitulo, obtenerCategorias, obtenerReparto } = require('./src/trailerflix.controller');
 
 const PORT = process.env.PORT || 3000;
 
@@ -31,8 +31,12 @@ app.get('/api/titulo/:title', (req, res) => {
     res.send(data)
 })
 
+// Esta ruta recibe el nombre de una categoria (serie o pelicula) y devuelve un listado correspondiente a esa categoria
 app.get('/api/categoria/:cat', (req, res) => {
-    res.send("Hola")
+    const cat = req.params.cat.trim().toLowerCase()
+    const data = obtenerCategorias(cat, DB)
+    res.send(data)
+    
 })
 
 // Esta ruta recibe el nombre de un actor o actriz y devuelve las películas en las que ha participado. junto con el reparto de cada película.

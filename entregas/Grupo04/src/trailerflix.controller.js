@@ -23,6 +23,13 @@ function leerTrailerflix() {
         item.reparto = item.reparto.split(',').map(actor => actor.trim());
     });
 
+    // Sacarle el acento a la categoria Peliculas
+    trailerflix.forEach((item) => {
+        if (item.categoria === "Película") {
+             item.categoria = "Pelicula";
+         }
+     });
+
     return trailerflix;
 }
 
@@ -39,6 +46,16 @@ function obtenerTrailerPorId(id, DB) {
         };
     } else {
         return { mensaje: `No se encontraron resultados con el id ${id}` };
+    }
+}
+
+const obtenerCategorias = (cat, DB) => {
+    const categorias = DB.filter(n => n.categoria.trim().toLowerCase().includes(cat));
+
+    if (categorias.length > 0) {
+        return categorias;
+    } else {
+        return { mensaje: `Esa categoria no existe .` };
     }
 }
 
@@ -63,4 +80,4 @@ const obtenerReparto = (param, DB) => {
     return result;
 }
 
-module.exports = { leerTrailerflix, obtenerTrailerPorId, obtenerTitulo, obtenerReparto };
+module.exports = { leerTrailerflix, obtenerTrailerPorId, obtenerCategorias, obtenerTitulo, obtenerReparto };
