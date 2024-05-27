@@ -1245,5 +1245,19 @@
       "duracion": "101 minutos",
       "reparto": "Raúl Juliá, Anjelica Huston, Christopher Lloyd, Christina Ricci, Carel Struycken, Dan Hedaya, Jimmy Workman, Elizabeth Wilson, Dana Ivey",
       "trailer": "https://www.youtube.com/embed/G388UMkJIBE"
-   }
+   },
+   {
+      "id": 99,
+      "poster": "./posters/99.jpg",
+      "titulo": "Esperando la Carroza",
+      "categoria": "Película",
+      "genero": "Comedia",
+      "tags": "Comedia, Drama",
+      "resumen": "Mamá Cora, una anciana de 80 años, desaparece y su familia entra en una caótica búsqueda que revela las miserias y conflictos de cada uno de sus miembros. Esta comedia argentina, llena de humor negro, retrata con ironía las costumbres de la clase media porteña.",
+      "temporadas": "N/A",
+      "duracion": "94 minutos",
+      "reparto": "Luis Brandoni, China Zorrilla, Antonio Gasalla, Betiana Blum, Julio De Grazia, Juan Manuel Tenuta, Darío Grandinetti, Enrique Pinti"
+    
+    }
+    
 ]
