@@ -25,7 +25,7 @@
 
 &nbsp;
 
- <h3 align="center"> 📝 Contenidos </h3>
+ <h2 align="center"> 📝 Contenidos </h2>
 
 - [x] Debe respetar la estructura básica de un servidor web utilizando Express JS
 - [x] Debe incluir el archivo .ENV
@@ -103,7 +103,7 @@
 
 ---
 
-<h3 align="center">Tecnologías utilizadas:</h3>
+<h2 align="center">Tecnologías utilizadas:</h2>
 
 &nbsp;
 
@@ -121,7 +121,7 @@
 
 &nbsp;
 
-<h4 align="center">Herramientas utilizadas:</h4>
+<h2 align="center">Herramientas utilizadas:</h2>
 
 <p align="center"> 
   <a href="https://code.visualstudio.com/" target="_blank" style="margin: 0 10px;"> 
@@ -131,4 +131,43 @@
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/trello/trello-plain-wordmark.svg" alt="trello" width="100" height="100"/> 
   </a>
 </p>
+
+&nbsp;
+
+---
+
+<h2 align="center">📷 Captures de los endpoints:</h2>
+
+<p>A continuación, podrán observar capturas de pantalla de las pruebas realizadas desde la extensión <code>Thunder Client</code> en VSCode de los diferentes endpoints</p>
+
+<h3>Endpoint <code>/api/catalogo</code></h3>
+
+<p align="center"> 
+  <img src="src/images/endpointCatalogo.jpg" alt="Endpoint-Catalogo"/>
+</p>
+
+<h3>Endpoint <code>/api/titulo/:title</code></h3>
+
+<p align="center"> 
+  <img src="src/images/endpointTitulo.jpg" alt="Endpoint-Titulo"/>
+</p>
+
+<h3>Endpoint <code>/api/categoria/:cat</code></h3>
+
+<p align="center">
+  <img src="src/images/endpointCategoria.jpg" alt="Endpoint-Categoria"/>
+</p>
+
+<h3>Endpoint <code>/api/reparto/:act</code></h3>
+
+<p align="center">
+  <img src="src/images/endpointReparto.jpg" alt="Endpoint-Reparto"/>
+</p>
+
+<h3>Endpoint <code>/api/trailer/:id</code></h3>
+
+<p align="center">
+  <img src="src/images/endpointTrailer.jpg" alt="Endpoint-Trailer"/>
+</p>
+
 &nbsp;

@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+// Función para leer el archivo de datos y devolverlo en formato JSON.
 function leerTrailerflix() {
 
     let datos
@@ -49,6 +50,7 @@ function obtenerTrailerPorId(id, DB) {
     }
 }
 
+// Función para buscar las películas o series por categoría.
 const obtenerCategorias = (cat, DB) => {
     const categorias = DB.filter(n => n.categoria.trim().toLowerCase().includes(cat));
 
@@ -59,6 +61,7 @@ const obtenerCategorias = (cat, DB) => {
     }
 }
 
+// Función para buscar las películas o series por título.
 const obtenerTitulo = (title, DB) => {
     const titleEncontrado = DB.filter(n => n.titulo.toLowerCase().includes(title));
     if (titleEncontrado.length > 0) {
@@ -68,6 +71,7 @@ const obtenerTitulo = (title, DB) => {
     }
 }
 
+// Función para buscar las películas o series en las que ha participado un actor o actriz, devuelve título y reparto.
 const obtenerReparto = (param, DB) => {
     let result = DB.filter( item => 
         item.reparto.some(reparto => 
