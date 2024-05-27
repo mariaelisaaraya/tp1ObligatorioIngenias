@@ -103,7 +103,7 @@
 
 ---
 
-<h2 align="center">Tecnologías utilizadas:</h2>
+<h2 align="center">Tecnologías utilizadas</h2>
 
 &nbsp;
 
@@ -121,7 +121,7 @@
 
 &nbsp;
 
-<h2 align="center">Herramientas utilizadas:</h2>
+<h2 align="center">Herramientas utilizadas</h2>
 
 <p align="center"> 
   <a href="https://code.visualstudio.com/" target="_blank" style="margin: 0 10px;"> 
@@ -136,7 +136,7 @@
 
 ---
 
-<h2 align="center">📷 Captures de los endpoints:</h2>
+<h2 align="center">📷 Captures de los endpoints</h2>
 
 <p>A continuación, podrán observar capturas de pantalla de las pruebas realizadas desde la extensión <code>Thunder Client</code> en VSCode de los diferentes endpoints</p>
 
