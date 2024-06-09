@@ -2,14 +2,14 @@
 ## 🆕 Feedback
 
 - Grupo 1: Feedbado sábado 15/06
-- Grupo 2: Realizado.
+- Grupo 2: Realizado y aprobado.
 - Grupo 3: Feedbado sábado 15/06
-- Grupo 4: Realizado.
+- Grupo 4: Realizado y aprobado.
 - Grupo 5: Feedbado sábado 15/06
-- Grupo 6: Realizado
+- Grupo 6: Realizado y aprobado.
 - Grupo 7: Feedbado sábado 15/06
-- Grupo 8: Realizado
-- Grupo 9: Realizado
+- Grupo 8: Realizado y aprobado.
+- Grupo 9: Realizado y aprobado.
 
 # 🏃‍♀️ Trabajo N1 Obligatoio
 
