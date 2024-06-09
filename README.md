@@ -1,7 +1,15 @@
 
-## 🆕 Fecha y Horario de Entrega
+## 🆕 Feedback
 
-Lunes 27/05 a las 18hs
+- Grupo 1:
+- Grupo 2: Realizado.
+- Grupo 3:
+- Grupo 4: Realizado.
+- Grupo 5:
+- Grupo 6: Realizado
+- Grupo 7:
+- Grupo 8: Realizado
+- Grupo 9:
 
 # 🏃‍♀️ Trabajo N1 Obligatoio
 
