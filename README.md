@@ -1,13 +1,13 @@
 
 ## 🆕 Feedback
 
-- Grupo 1: Feedbado sábado 15/06
+- Grupo 1: Feedback sábado 15/06
 - Grupo 2: Realizado y aprobado.
-- Grupo 3: Feedbado sábado 15/06
+- Grupo 3: Feedback sábado 15/06
 - Grupo 4: Realizado y aprobado.
-- Grupo 5: Feedbado sábado 15/06
+- Grupo 5: Feedback sábado 15/06
 - Grupo 6: Realizado y aprobado.
-- Grupo 7: Feedbado sábado 15/06
+- Grupo 7: Feedback sábado 15/06
 - Grupo 8: Realizado y aprobado.
 - Grupo 9: Realizado y aprobado.
 
