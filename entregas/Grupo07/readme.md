@@ -8,4 +8,4 @@ Grupo:
 - Yanina Ferreira 
 - Celina Lopez
 
-Link: https://github.com/mariaelisaaraya/Grupo7-Ingenias
+Link: https://github.com/Junixza/Grupo7
