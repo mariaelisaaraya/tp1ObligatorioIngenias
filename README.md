@@ -1,15 +1,15 @@
 
 ## 🆕 Feedback
 
-- Grupo 1: Feedback sábado 15/06
-- Grupo 2: Realizado y aprobado.
-- Grupo 3: Feedback sábado 15/06
-- Grupo 4: Realizado y aprobado.
-- Grupo 5: Feedback sábado 15/06
-- Grupo 6: Realizado y aprobado.
-- Grupo 7: Feedback sábado 15/06
-- Grupo 8: Realizado y aprobado.
-- Grupo 9: Realizado y aprobado.
+- Grupo 1: [Feedback](https://github.com/mariaelisaaraya/tp1ObligatorioIngenias/blob/master/entregas/Grupo01/feedback.md)
+- Grupo 2: [Feedback](https://github.com/mariaelisaaraya/tp1ObligatorioIngenias/blob/master/entregas/Grupo02/feedback.md)
+- Grupo 3: [Feedback](https://github.com/mariaelisaaraya/tp1ObligatorioIngenias/blob/master/entregas/Grupo03/feedback.md)
+- Grupo 4: [Feedback](https://github.com/mariaelisaaraya/tp1ObligatorioIngenias/blob/master/entregas/Grupo04/feedback.md)
+- Grupo 5: [Feedback](https://github.com/mariaelisaaraya/tp1ObligatorioIngenias/blob/master/entregas/Grupo05/feedback.md)
+- Grupo 6: [Feedback](https://github.com/mariaelisaaraya/tp1ObligatorioIngenias/blob/master/entregas/Grupo06/feedback.md)
+- Grupo 7: [Feedback](https://github.com/mariaelisaaraya/tp1ObligatorioIngenias/blob/master/entregas/Grupo07/feedback.md)
+- Grupo 8: [Feedback](https://github.com/mariaelisaaraya/tp1ObligatorioIngenias/blob/master/entregas/Grupo08/feedback.md)
+- Grupo 9: [Feedback](https://github.com/mariaelisaaraya/tp1ObligatorioIngenias/blob/master/entregas/Grupo09/feedback.md)
 
 # 🏃‍♀️ Trabajo N1 Obligatoio
 
