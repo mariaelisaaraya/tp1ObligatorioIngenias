@@ -8,7 +8,7 @@
 
 ## Uso de Variables de Entorno
 
-- Bellezas .env son las variables de entorno, si o si tiene que ir, por fa corroboren en sus locales alguien que no tenga el proyecto y vean que sucede.
+- Bellezas .env son las variables de entorno, si o si tiene que ir, por fa corroboren en sus locales alguien que no tenga el proyecto y vean que sucede. Sobre el .env y porque es necesario pueden leerlo en este trabajo practivo que es del grupo [5](https://github.com/Daniela8594/grupo-5)
 
 ## Entrega Puntual
 
